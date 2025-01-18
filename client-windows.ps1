@@ -1,4 +1,3 @@
-CLS
 param (
 	[string]$IP
 )
@@ -35,6 +34,7 @@ function MapNetworkGlobal {
 	Write-Host "Binding `"$DriveName`" Success!" -ForegroundColor Green
 }
 
+Clear-Host
 Write-Host "TERMUX Samba Script: CLIENT" -ForegroundColor Yellow
 
 # disable lanmanserver, dont kill proc, let user reboot its system
