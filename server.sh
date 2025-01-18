@@ -1,16 +1,20 @@
 #!/bin/bash
 
 # apt update -y && apt upgrade -y
+CONFIG_OVERWRITE=0
 clear
 
-echo -e "\e[33mTERMUX Samba Script: SERVER\e[0m\n"
+if [ "$1" == "-o" ]; then
+  CONFIG_OVERWRITE=1
+fi
 
+echo -e "\e[33mTERMUX Samba Script: SERVER\e[0m\n"
 if [ -z $TERMUX_VERSION ]; then
   echo -e "\e[33mIt seems TERMUX is not available.\e[0m"
   echo -e "\e[33mScript might work but is optimized for android devices.\e[0m"
 fi
 
-if ! command -v net-tools >/dev/null; then
+if ! command -v ifconfig >/dev/null; then
   echo "Installing net-tools"
   apt install net-tools -y
 fi
@@ -25,7 +29,7 @@ if ! command -v git >/dev/null; then
   apt install git -y
 fi
 
-if ! command -v samba >/dev/null; then
+if ! command -v smbd >/dev/null; then
   echo "Installing Samba server"
   apt install samba -y
 fi
@@ -62,8 +66,10 @@ mkdir -p $HOME/remote_share
 echo "Setting shared folder permission to 755..."
 chmod -R 755 $HOME/remote_share
 
-if [ ! -e $PREFIX/etc/smb.conf ]; then
+if [ ! -e $PREFIX/etc/smb.conf ] || [ $CONFIG_OVERWRITE -eq 1 ]; then
   echo "Copy and link default configs..."
+  rm -f $PREFIX/etc/smb.conf
+  rm -f $PREFIX/etc/samba/smb.conf
   cp $PWD/config/smb.conf $PREFIX/etc/
   ln -s $PREFIX/etc/smb.conf $PREFIX/etc/samba/smb.conf
 fi
