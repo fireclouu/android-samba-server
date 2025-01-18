@@ -42,10 +42,15 @@ if [ ! -e $HOME/repo/android-samba-server ]; then
     exit 1
   fi
 
-  echo "Changing directory to $HOME/repo/android-samba-server"
-  cd $HOME/repo/android-samba-server
 fi
 
+echo "Changing directory to $HOME/repo/android-samba-server"
+cd $HOME/repo/android-samba-server
+
+if [ ! -t 0 ]; then
+  bash $HOME/repo/android-samba-server/server.sh
+  exit 0
+fi
 
 if [ ! -z $TERMUX_VERSION ]; then
   echo "Requesting storage permission..."
@@ -77,7 +82,7 @@ fi
 
 ifconfig
 
-echo -e "\e[33mChoose IP above, and please run client-windows.ps1 on your PC.\n[ Waiting for client device... ]\e[0m"
+echo -e "\e[33mRun client-windows.ps1 on your PC and input your home IP network, see output above.\n[ Waiting for client device... ]\e[0m"
 client_ip=$(nc -lvnp 9000 2>&1 | awk 'NR==2 {print $4}')
 
 echo -e "\e[32mClient $client_ip communicated!\e[0m"
