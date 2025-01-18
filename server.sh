@@ -41,7 +41,10 @@ if [ ! -e $HOME/repo/android-samba-server ]; then
     echo -e "\e[31mFailed cloning repository!"
     exit 1
   fi
-
+else
+  echo "Checking for updates..."
+  cd $HOME/repo/android-samba-server
+  git pull &>/dev/null
 fi
 
 echo "Changing directory to $HOME/repo/android-samba-server"
