@@ -10,12 +10,12 @@ if [ -z $TERMUX_VERSION ]; then
   echo -e "\e[33mScript might work but is optimized for android devices.\e[0m"
 fi
 
-if ! command -v git >/dev/null; then
+if ! command -v net-tools >/dev/null; then
   echo "Installing net-tools"
   apt install net-tools
 fi
 
-if ! command -v git >/dev/null; then
+if ! command -v sed >/dev/null; then
   echo "Installing Text utils..."
   apt install sed
 fi
@@ -25,7 +25,7 @@ if ! command -v git >/dev/null; then
   apt install git
 fi
 
-if ! command -v git >/dev/null; then
+if ! command -v samba >/dev/null; then
   echo "Installing Samba server"
   apt install samba
 fi
