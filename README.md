@@ -27,7 +27,7 @@ cmd /c "cd %USERPROFILE% && curl -O https://raw.githubusercontent.com/fireclouu/
 ```
 At first, script will tell you to reboot due to disabling of `Lanmanserver` to take effect.
 
-The next time you run the script, it will ask for server IP. This is listed on interfaces provided on server, pick either wifi IP, RDNS ID, etc, that matches your network setup.
+The next time you run the script, it will ask for server IP. This is listed on interfaces provided on server, pick either wifi IP, RNDIS, etc, that matches your network setup.
 
 It will automate the connection and binding process and will ask for server password you just did on server-side.
 
