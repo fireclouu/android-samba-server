@@ -14,8 +14,10 @@ Download [Termux app](https://github.com/termux/termux-app/releases) and paste t
 ```
 curl -O https://raw.githubusercontent.com/fireclouu/android-samba-server/main/server.sh && chmod +x server.sh && ./server.sh -o
 ```
+
 > [!NOTE]
 > Remove -o parameter if you plan to configure your smb.conf located at $PREFIX/etc folder
+
 It will automate the process. On first usage, supply a `password` when asked, then next time using the script, you can leave it unchanged.
 
 ### Windows (Client)
