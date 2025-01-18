@@ -1,3 +1,4 @@
+CLS
 param (
 	[string]$IP
 )
