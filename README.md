@@ -12,7 +12,7 @@ Please note also that performance will vary with the choice of your network setu
 ### Android
 Download [Termux app](https://github.com/termux/termux-app/releases) and paste this on terminal:
 ```
-curl -sSL https://raw.githubusercontent.com/fireclouu/android-samba-server/server.sh | bash
+curl -sSL https://raw.githubusercontent.com/fireclouu/android-samba-server/main/server.sh | bash
 ```
 
 It will automate the process. On first usage, supply a `password` when asked, then next time using the script, you can leave it unchanged.
