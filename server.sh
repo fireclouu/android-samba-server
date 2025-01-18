@@ -12,22 +12,22 @@ fi
 
 if ! command -v net-tools >/dev/null; then
   echo "Installing net-tools"
-  apt install net-tools
+  apt install net-tools -y
 fi
 
 if ! command -v sed >/dev/null; then
   echo "Installing Text utils..."
-  apt install sed
+  apt install sed -y
 fi
 
 if ! command -v git >/dev/null; then
   echo "Installing Git"
-  apt install git
+  apt install git -y
 fi
 
 if ! command -v samba >/dev/null; then
   echo "Installing Samba server"
-  apt install samba
+  apt install samba -y
 fi
 
 mkdir -p $HOME/repo
