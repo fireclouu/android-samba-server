@@ -77,7 +77,7 @@ fi
 
 ifconfig
 
-echo -e "\e[33mWaiting for client device...\e[0m"
+echo -e "\e[33mChoose IP above, and please run client-windows.ps1 on your PC.\n[ Waiting for client device... ]\e[0m"
 client_ip=$(nc -lvnp 9000 2>&1 | awk 'NR==2 {print $4}')
 
 echo -e "\e[32mClient $client_ip communicated!\e[0m"
