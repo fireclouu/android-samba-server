@@ -1,5 +1,5 @@
 # android-samba-server
-Script automation for Samba server running on Android via Termux app, and using Windows PC native samba server without needing external application
+Script automation for Samba server running on Android via Termux app, and using Windows PC native samba protocol without needing external application
 
 ## Method
 On Windows client, it uses port forwarding to localhost, by disabling `Lanmanserver` and redirect Android Samba server running on port 4445 and 1139.
