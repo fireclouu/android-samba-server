@@ -50,11 +50,6 @@ fi
 echo "Changing directory to $HOME/repo/android-samba-server"
 cd $HOME/repo/android-samba-server
 
-if [ ! -t 0 ]; then
-  bash $HOME/repo/android-samba-server/server.sh
-  exit 0
-fi
-
 if [ ! -z $TERMUX_VERSION ]; then
   echo "Requesting storage permission..."
   yes | termux-setup-storage &>/dev/null

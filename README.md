@@ -9,16 +9,26 @@ It is REQUIRED to connect your Android and Windows devices on the same network b
 
 Please note also that performance will vary with the choice of your network setup.
 
-### Android
+### Android (Server)
 Download [Termux app](https://github.com/termux/termux-app/releases) and paste this on terminal:
 ```
-curl -sSL https://raw.githubusercontent.com/fireclouu/android-samba-server/main/server.sh | bash
+curl -O https://raw.githubusercontent.com/fireclouu/android-samba-server/main/server.sh && chmod +x server.sh && ./server.sh
 ```
 
 It will automate the process. On first usage, supply a `password` when asked, then next time using the script, you can leave it unchanged.
 
-### Windows
+### Windows (Client)
 Open Powershell, and paste this:
 ```
-curl -sSL https://raw.githubusercontent.com/fireclouu/android-samba-server/main/client-windows.sh | bash
+curl -O https://raw.githubusercontent.com/fireclouu/android-samba-server/main/client-windows.sh 
 ```
+At first, script will tell you to reboot due to disabling of `Lanmanserver` to take effect.
+
+The next time you run the script, it will ask for server IP. This is listed on interfaces provided on server, pick either wifi IP, RDNS ID, etc, that matches your network setup.
+
+It will automate the connection and binding process and will ask for server password you just did on server-side.
+
+## Issues
+On server-side, I tested it on my own device running Android 14 and HyperOS and OneUI, both working flawlessly.
+
+Client-side I use Windows 11 Home 23H2 build 22631.4602 and works fine.
