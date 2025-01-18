@@ -16,14 +16,14 @@ curl -O https://raw.githubusercontent.com/fireclouu/android-samba-server/main/se
 ```
 
 > [!NOTE]
-> Remove -o parameter if you plan to configure your smb.conf located at $PREFIX/etc folder
+> Remove `-o` parameter if you plan to configure your `smb.conf` located at `$PREFIX/etc` folder
 
 It will automate the process. On first usage, supply a `password` when asked, then next time using the script, you can leave it unchanged.
 
 ### Windows (Client)
-Open Powershell, and paste this:
+Open Run by pressing `Ctrl + R`, and paste this:
 ```
-curl -O https://raw.githubusercontent.com/fireclouu/android-samba-server/main/client-windows.sh 
+cmd /c "cd %USERPROFILE% && curl -O https://raw.githubusercontent.com/fireclouu/android-samba-server/main/client-windows.ps1 && powershell /c %USERPROFILE%\client-windows.ps1"
 ```
 At first, script will tell you to reboot due to disabling of `Lanmanserver` to take effect.
 
@@ -35,3 +35,4 @@ It will automate the connection and binding process and will ask for server pass
 On server-side, I tested it on my own device running Android 14 and HyperOS and OneUI, both working flawlessly.
 
 Client-side I use Windows 11 Home 23H2 build 22631.4602 and works fine.
+
